@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-main: #130e09;
+    --bg-deep: #0d0905;
+    --text-main: #ffffff;
+    --border-fine: rgba(255, 255, 255, 0.115);
+    --grid-line: rgba(255, 255, 255, 0.0265);
+    --menu-bg: #fcfcfc;
+    --menu-text: #141414;
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+/* 48-column atmospheric grid overlay */
+.atelier-grid-48 {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(48, minmax(0, 1fr));
+  pointer-events: none;
+  z-index: 2;
+}
+
+.atelier-grid-col {
+  border-right: 1px solid var(--grid-line);
+  height: 100%;
+}
+
+.atelier-grid-col:first-child {
+  border-left: 1px solid var(--grid-line);
+}
+
+/* Fine Atelier Unit horizontal rule */
+.atelier-fine-rule {
+  height: 1px;
+  background-color: var(--border-fine);
+  width: 100%;
+}
+
+/* Cinematic headline typography */
+.atelier-headline {
+  font-family: 'Syne', 'Space Grotesk', sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 0.88;
+  text-transform: uppercase;
+}
+
+/* Subtle glassmorphism */
+.atelier-glass {
+  background: rgba(19, 14, 9, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.atelier-glass-card {
+  background: rgba(25, 18, 12, 0.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.atelier-glass-card:hover {
+  background: rgba(35, 25, 17, 0.75);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+/* Custom minimal scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #0d0905;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
