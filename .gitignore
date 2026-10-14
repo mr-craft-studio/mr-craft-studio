@@ -9,3 +9,5 @@ coverage/
 data/database.json
 /data/
 /reset-admin.cjs
+server.ts.backup
+cripts/
