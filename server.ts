@@ -1,5 +1,5 @@
 ﻿import express from 'express';
-import { createServer as createViteServer } from 'vite';
+
 import path from 'path';
 import fs from 'fs';
 import { fileURLToPath } from 'url';
@@ -1673,7 +1673,8 @@ Important Boundaries:
       res.sendFile(path.resolve(__dirname, 'dist', 'index.html'));
     });
   } else {
-    const vite = await createViteServer({
+    const { createServer: createViteServer } = await import('vite');
+const vite = await createViteServer({
       server: { middlewareMode: true },
       appType: 'spa',
     });
